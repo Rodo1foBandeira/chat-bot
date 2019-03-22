@@ -51,7 +51,7 @@ public class main {
 			    		  if(e.getKeyCode() == e.VK_ENTER){  
 				    		  objChat.sendMessage(caixaEnvio.getText());
 				    		  caixaEnvio.setText("");
-				    		  mensagens.setText(objChat.retrieveMessage() + "");
+				    		  mensagens.setText(mensagens.getText() + objChat.retrieveMessage() + "\n");
 				          }   
 			    	  }catch(Exception ex){
 			    		  ex.printStackTrace();
