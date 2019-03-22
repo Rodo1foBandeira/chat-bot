@@ -11,7 +11,7 @@ import javax.persistence.Id;
  * @author Rodolfo
  */
 @Entity
-public class Cliente {
+public class Cliente {	
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long Id;
@@ -52,9 +52,9 @@ public class Cliente {
             Nome = nome;
     }
     
-    public Cliente (String nome, String cpf) {
-    	Nome = nome;
+    public Cliente(String cpf, String nome) {
     	Cpf = cpf;
-    	SegundaVia = 0;
+    	Nome = nome;
     }
+    
 }

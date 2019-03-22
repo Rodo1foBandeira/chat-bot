@@ -24,7 +24,15 @@ public class Mensagem {
     @JoinColumn(nullable = false, updatable = false)
     private Cliente Cliente;
 
-    private String Message;
+    public void setId(long id) {
+		Id = id;
+	}
+
+	public void setCreateDateTime(Timestamp createDateTime) {
+		this.createDateTime = createDateTime;
+	}
+
+	private String Message;
     
     @Column
     @CreationTimestamp
