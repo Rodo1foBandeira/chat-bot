@@ -25,7 +25,7 @@ public class Chat extends UnicastRemoteObject implements IChat {
 	private Handle handle = new Handle();
 
 	@Override
-	public void sendMessage(String msg) throws RemoteException {				
+	public void sendMessage(String msg) throws RemoteException {
 		
 		if (mensagem.length() == 0) {
 			mensagem = "Olá. " + MensagemInicial;
@@ -39,12 +39,7 @@ public class Chat extends UnicastRemoteObject implements IChat {
 			}				
 		}else {
 			mensagem = handle.Decisao(sessao.getCpf(), mensagem, msg);
-		}
-		
-		if (mensagem.contains("Xau") || msg.equals("Xau")){
-			mensagem = "";
-			sessao = null;
-		}
+		}	
 	}
 
 	@Override
@@ -52,6 +47,12 @@ public class Chat extends UnicastRemoteObject implements IChat {
 		if (mensagem.length() == 0)
 			mensagem = "Olá. " + MensagemInicial;
 		return mensagem;
+	}
+
+	@Override
+	public void sair() throws RemoteException {
+		mensagem = "";
+		sessao = null;
 	}
 
 }
