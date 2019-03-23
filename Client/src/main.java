@@ -32,15 +32,15 @@ public class main {
 			caixaEnvio.setPreferredSize(new Dimension(800,25));
 			
 			JTextArea mensagens = new JTextArea();
-			mensagens.setPreferredSize(new Dimension(800,300));
+			mensagens.setPreferredSize(new Dimension(800,700));
 			//mensagens.setEnabled(false);
 
 			JPanel painel = new JPanel();
-			painel.setPreferredSize(new Dimension(800,600));
+			painel.setPreferredSize(new Dimension(800,800));
 			
 			painel.add(mensagens);
 			painel.add(caixaEnvio);
-			painel.add(botaoEntrar);
+			//painel.add(botaoEntrar);
 			painel.add(botaoSair);
 			
 			
@@ -50,8 +50,9 @@ public class main {
 			    	  try {
 			    		  if(e.getKeyCode() == e.VK_ENTER){  
 				    		  objChat.sendMessage(caixaEnvio.getText());
+				    		  mensagens.setText(mensagens.getText() + "Você: " + caixaEnvio.getText() + "\n");
 				    		  caixaEnvio.setText("");
-				    		  mensagens.setText(mensagens.getText() + objChat.retrieveMessage() + "\n");
+				    		  mensagens.setText(mensagens.getText() + "Sabrina Robot: " + objChat.retrieveMessage() + "\n");
 				          }   
 			    	  }catch(Exception ex){
 			    		  ex.printStackTrace();

@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.server.model.Cliente;
+import com.server.repo.IClienteQuery;
 import com.server.repo.IClienteRepo;
 import com.server.repo.IMensagemRepo;
 
@@ -25,6 +26,7 @@ public class ServerApplication {
 	
 	public static IClienteRepo clienteRepo;
 	public static IMensagemRepo mensagemRepo;
+	public static IClienteQuery clienteQry;
 	
 	private static final Logger log = LoggerFactory.getLogger(ServerApplication.class);
 	
@@ -41,9 +43,10 @@ public class ServerApplication {
 	}
 	
 	@Bean
-	public CommandLineRunner init(IClienteRepo cliRepo, IMensagemRepo msgRepo) {
+	public CommandLineRunner init(IClienteRepo cliRepo, IMensagemRepo msgRepo, IClienteQuery cliQry) {
 		clienteRepo = cliRepo;
 		mensagemRepo = msgRepo;
+		clienteQry = cliQry;
 		return (args) -> {};
 	}
 

@@ -57,4 +57,8 @@ public class Cliente {
     	Nome = nome;
     }
     
+    public Cliente() {
+    	
+    }
+    
 }
